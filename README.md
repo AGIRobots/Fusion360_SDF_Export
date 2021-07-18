@@ -1,3 +1,5 @@
+# Fusion360で作成したモデルからUnity Robotics Hubで使うためにカスタマイズしたURDFファイルを作成
+
 # Fusion360 SDF Export
 Fusion360からSDFファイルorURDFファイル+STLファイルを生成するスクリプトです
 
