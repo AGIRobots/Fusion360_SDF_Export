@@ -5,9 +5,10 @@ import os
 import xml.etree.ElementTree as Et
 import xml.dom.minidom as md
 
-#4x4の同次変換行列から平行移動vectorを取得する&cmをmに変換
+# 4x4の同次変換行列から平行移動vectorを取得する&mmをmに変換
+# 一般的なfusion2urdfではcmを単位とすることが多いが、このスクリプトではmmを基準とし、mm→mに変換を実施。
 def get_vector(matrix):
-    vector = [matrix[3] / 100.0, matrix[7] / 100, matrix[11] / 100]
+    vector = [matrix[3] / 1000.0, matrix[7] / 1000.0, matrix[11] / 1000.0]
     return vector
 
 #4x4の行列を引数に入れることで回転行列を抽出する
@@ -330,7 +331,3 @@ def run(context):
             #ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
             ui.messageBox('Error')
             ui.messageBox('Failed:\n{}'.format(traceback.format_exc()))
-
-
-    
-
